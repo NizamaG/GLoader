@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Gradient Loader</title>
+	
+<style>
+body,
+div {
+padding: 0;
+margin:0;
+}
+
+body {	
+background: #050210;
+}
+
+#loader1 {
+padding: 50px;
+margin: 300px auto 0;
+height: 600px;
+width: 600px;
+position: relative;
+border-radius: 50%;
+background:linear-gradient(#fb5dad,#55fb9f,#b97aff);
+animation: colors 1s linear infinite;
+}
+
+#loader1::before,
+#loader1::after {
+height: 700px;
+width: 700px;
+border-radius: 50%;
+content: ' ';
+position: absolute;
+top: 0px;
+left: 0px;
+background:linear-gradient(#fb5dad,#55fb9f,#b97aff);
+background-size: 710%;
+z-index: -1;
+}
+
+#loader1::after {
+filter: blur(130px);
+overflow: hidden;
+}
+
+@keyframes colors
+{
+	0%{
+		transform: rotate(0deg);
+	}
+	10%{
+		transform: rotate(36deg);
+	}
+	20%{
+		transform: rotate(72deg);
+	}
+	30%{
+		transform: rotate(108deg);
+	}
+	40%{
+		transform: rotate(144deg);
+	}
+	50%{
+		transform: rotate(180deg);
+	}
+	60%{
+		transform: rotate(218deg);
+	}
+	70%{
+		transform: rotate(234deg);
+	}
+	80%{
+		transform: rotate(290deg);
+	}
+	90%{
+		transform: rotate(324deg)
+	}
+	100%{
+		transform: rotate(360deg)
+	}		
+}
+
+#loader2 {
+padding:200px;
+margin: 0 auto;
+height: 200px;
+width: 200px;
+border-radius: 50%;
+background: #050210;
+overflow: hidden;
+}
+
+#loader2 div {
+display: block;
+height: 200px;
+width: 200px;
+border-radius: 50%;
+position: relative;
+background: #0c0526;
+transition: fade-out;
+}
+
+#loader2 div:nth-of-type(2){
+top: -200px;
+left: 0;
+animation: loaderScale 1.4s ease-out infinite;
+z-index: 10;
+}
+
+@keyframes loaderScale {
+10% {
+	transform: scale(1); 
+	background: #120c26;
+	z-index: 20;
+}
+100% {
+	background: #050210;
+  	transform: scale(3.6);
+  	z-index: 8;
+}
+}
+</style>
+
+</head>
+<body>
+
+
+		<div id="loader1">
+			<div id="loader2">
+				<div id="scale2">
+				</div> <!-- #scale2 -->
+				 <div id="scale3">
+				</div><!-- #scale3 -->
+			</div> <!-- #loader2 -->
+		</div><!-- #loader1 -->
+		
+</body>
+</html>
